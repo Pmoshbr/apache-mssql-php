@@ -62,6 +62,7 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
+  <Icon>https://raw.githubusercontent.com/Pmoshbr/apache-mssql-php/master/apache.png</Icon>
   <Environment/>
   <Labels/>
   <Config Name="Host Port 1" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">80</Config>
