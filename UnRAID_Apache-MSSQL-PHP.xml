@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Pmosh-Apache-MSSQL-PHP</Name>
+  <Repository>pmoshbr/apache-mssql-php</Repository>
+  <Registry/>
+  <Network>br0</Network>
+  <MyIP>192.168.0.13</MyIP>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://www.apache.org/</Project>
+  <Overview>&#xD;
+    Apache Server with MSSQL PDO and PHP 7.2[br][br]&#xD;
+  </Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL>https://github.com/Pmoshbr/unraid-dockers-template/master/pmosh/apache-mssql-php.xml</TemplateURL>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1554144056</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#xD;
+    Apache Server with MSSQL PDO and PHP 7.2[br][br]&#xD;
+  </Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>443</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/www</HostDir>
+      <ContainerDir>/var/www</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/apache-mssql-php/apache2</HostDir>
+      <ContainerDir>/etc/apache2</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/apache-mssql-php/php7</HostDir>
+      <ContainerDir>/etc/php7</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/vault</HostDir>
+      <ContainerDir>/media/dados</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Host Port 1" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">80</Config>
+  <Config Name="Host Port 2" Target="443" Default="443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="true" Mask="false">443</Config>
+  <Config Name="WEB Path" Target="/var/www" Default="/mnt/user/www" Mode="rw" Description="Container Path: /var/www" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/www</Config>
+  <Config Name="Apache Path" Target="/etc/apache2" Default="/mnt/user/appdata/apache-mmsql-php/apache" Mode="rw" Description="Container Path: /etc/apache2" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/apache-mssql-php/apache2</Config>
+  <Config Name="PHP Path" Target="/etc/php7" Default="/mnt/user/appdata/apache-mmsql-php/php" Mode="rw" Description="Container Path: /etc/php7" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/apache-mssql-php/php7</Config>
+  <Config Name="Vault Path" Target="/media/dados" Default="/mnt/user/vault" Mode="rw" Description="Container Path: /media/dados" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/vault</Config>
+</Container>
