@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Pmosh-Apache-MSSQL-PHP</Name>
+  <Name>Apache-MSSQL-PHP</Name>
   <Repository>pmoshbr/apache-mssql-php</Repository>
   <Registry/>
   <Network>br0</Network>
@@ -12,9 +12,9 @@
   <Overview>&#xD;
     Apache Server with MSSQL PDO and PHP 7.2[br][br]&#xD;
   </Overview>
-  <Category>Downloaders:</Category>
+  <Category>WebServer:</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <TemplateURL>https://github.com/Pmoshbr/unraid-dockers-template/master/pmosh/apache-mssql-php.xml</TemplateURL>
+  <TemplateURL>https://github.com/Pmoshbr/apache-mssql-php/master/pmosh/UnRAID_Apache-MSSQL-PHP.xml</TemplateURL>
   <Icon/>
   <ExtraParams/>
   <PostArgs/>
