@@ -34,6 +34,7 @@ RUN apt-get upgrade -y
 RUN apt-get autoremove -y
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
+RUN mkdir /media/dados
 
 ENV APACHE_RUN_USER  www-data
 ENV APACHE_RUN_GROUP www-data
@@ -49,6 +50,7 @@ RUN mkdir -p $APACHE_LOG_DIR
 VOLUME /var/www
 VOLUME /etc/apache2
 VOLUME /etc/php7
+VOLUME /media/dados
 
 EXPOSE 80
 EXPOSE 443
