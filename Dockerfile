@@ -30,7 +30,6 @@ RUN pecl install pdo_sqlsrv
 RUN echo extension=pdo_sqlsrv.so >> `php --ini | grep "Scan for additional .ini files" | sed -e "s|.*:\s*||"`/30-pdo_sqlsrv.ini
 RUN echo extension=sqlsrv.so >> `php --ini | grep "Scan for additional .ini files" | sed -e "s|.*:\s*||"`/20-sqlsrv.ini
 
-RUN apt-get upgrade -y
 RUN apt-get autoremove -y
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
@@ -53,5 +52,4 @@ VOLUME /etc/php7
 VOLUME /media/dados
 
 EXPOSE 80
-EXPOSE 443
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
