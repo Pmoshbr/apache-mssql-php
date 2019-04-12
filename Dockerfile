@@ -35,6 +35,12 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir /media/dados
 
+# FOR DEVELOPMENT ONLY
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+RUN php composer-setup.php
+RUN php -r "unlink('composer-setup.php');"
+RUN mv composer.phar /usr/local/bin/composer
+
 ENV APACHE_RUN_USER  www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR   /var/log/apache2
