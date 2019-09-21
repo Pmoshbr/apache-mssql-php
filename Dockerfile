@@ -25,6 +25,8 @@ RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> /root/.bashrc
 RUN /bin/bash -c "source /root/.bashrc"
 RUN apt-get install -y unixodbc-dev
 
+RUN apt-get install -y at
+
 RUN pecl install sqlsrv
 RUN pecl install pdo_sqlsrv
 RUN echo extension=pdo_sqlsrv.so >> `php --ini | grep "Scan for additional .ini files" | sed -e "s|.*:\s*||"`/30-pdo_sqlsrv.ini
