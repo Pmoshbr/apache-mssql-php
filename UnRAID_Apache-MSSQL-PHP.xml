@@ -14,8 +14,8 @@
   </Overview>
   <Category>WebServer:</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <TemplateURL>https://github.com/Pmoshbr/apache-mssql-php/master/pmosh/UnRAID_Apache-MSSQL-PHP.xml</TemplateURL>
-  <Icon/>
+  <TemplateURL>https://github.com/Pmoshbr/apache-mssql-php/master/UnRAID_Apache-MSSQL-PHP.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Pmoshbr/apache-mssql-php/master/apache.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
