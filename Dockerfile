@@ -26,8 +26,8 @@ RUN apt-get install -y unixodbc-dev
 
 RUN apt-get install -y at
 
-RUN pecl install sqlsrv
-RUN pecl install pdo_sqlsrv
+RUN pecl channel-update pecl.php.net && pecl install sqlsrv-5.10.1
+RUN pecl install pdo_sqlsrv-5.10.1
 RUN echo extension=pdo_sqlsrv.so >> `php --ini | grep "Scan for additional .ini files" | sed -e "s|.*:\s*||"`/30-pdo_sqlsrv.ini
 RUN echo extension=sqlsrv.so >> `php --ini | grep "Scan for additional .ini files" | sed -e "s|.*:\s*||"`/20-sqlsrv.ini
 
