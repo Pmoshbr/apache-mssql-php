@@ -15,9 +15,9 @@ RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php -y
 RUN apt-get update
 
 RUN apt-get install -y apache2
-RUN apt-get install -y php7.2 php7.2-common
-RUN apt-get install -y php7.2-dev php7.2-curl php7.2-gd php7.2-json php7.2-mbstring php7.2-intl php7.2-xml php7.2-zip php7.2-mysql php7.2-sqlite3
-RUN a2enmod php7.2
+RUN apt-get install -y php7.4 php7.4-common
+RUN apt-get install -y php7.4-dev php7.4-curl php7.4-gd php7.4-json php7.4-mbstring php7.4-intl php7.4-xml php7.4-zip php7.4-mysql php7.4-sqlite3 php7.4-soap
+RUN a2enmod php7.4
 
 RUN ACCEPT_EULA=Y apt-get install -y msodbcsql17 mssql-tools
 RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> /root/.bash_profile
@@ -58,7 +58,7 @@ RUN mkdir -p $APACHE_LOG_DIR
 
 VOLUME /var/www
 VOLUME /etc/apache2
-VOLUME /etc/php7
+VOLUME /etc/php
 VOLUME /media/dados
 
 EXPOSE 80
