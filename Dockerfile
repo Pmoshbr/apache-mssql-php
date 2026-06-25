@@ -1,22 +1,21 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER PmoshBR
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
-RUN apt-get install -y  dialog apt-utils
-RUN apt-get install -y curl sudo apt-transport-https software-properties-common python-software-properties
+RUN apt-get install -y dialog apt-utils
+RUN apt-get install -y curl sudo apt-transport-https software-properties-common
 
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-RUN curl https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2017.list | sudo tee /etc/apt/sources.list.d/mssql-server-2017.list
-RUN curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
-RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php -y
+RUN curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+RUN add-apt-repository -y ppa:ondrej/php -y
 
 RUN apt-get update
 
 RUN apt-get install -y apache2
 RUN apt-get install -y php7.4 php7.4-common
-RUN apt-get install -y php7.4-dev php7.4-curl php7.4-gd php7.4-json php7.4-mbstring php7.4-intl php7.4-xml php7.4-zip php7.4-mysql php7.4-sqlite3 php7.4-soap
+RUN apt-get install -y php7.4-dev php7.4-curl php7.4-gd php7.4-mbstring php7.4-intl php7.4-xml php7.4-zip php7.4-mysql php7.4-sqlite3 php7.4-soap
 RUN a2enmod php7.4
 
 RUN ACCEPT_EULA=Y apt-get install -y msodbcsql17 mssql-tools
