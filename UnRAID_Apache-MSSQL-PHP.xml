@@ -10,7 +10,7 @@
   <Support/>
   <Project>https://www.apache.org/</Project>
   <Overview>&#xD;
-    Apache Server with MSSQL PDO and PHP 7.2[br][br]&#xD;
+    Apache Server with MSSQL PDO and PHP 7.4[br][br]&#xD;
   </Overview>
   <Category>WebServer:</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
